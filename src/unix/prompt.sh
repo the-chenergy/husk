@@ -1,6 +1,6 @@
 # Formats the shell's prompt text.
 #
-# Shell Setup
+# Husk
 # Qianlang Chen
 # 05/14/22
 

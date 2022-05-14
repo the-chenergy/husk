@@ -1,6 +1,6 @@
 # Sets up the current shell.
 #
-# Shell Setup
+# Husk
 # Qianlang Chen
 # 05/14/22
 

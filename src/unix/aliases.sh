@@ -1,6 +1,6 @@
 # Defines the common aliases to use in a Unix shell.
 #
-# Shell Setup
+# Husk
 # Qianlang Chen
 # 05/14/22
 
