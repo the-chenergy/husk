@@ -2,21 +2,14 @@
 #
 # Husk
 # Qianlang Chen
-# 05/14/22
+# 05/15/22
 
-alias l='ls'
+alias l="ls"
 
 function c() {
   cd $@
   l
 }
-
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.ck checkout
-git config --global alias.co checkout
-git config --global alias.sm submodule
-git config --global alias.st status
 
 # Prints a visual guidance for how wide the terminal window is.
 # ruler <max_ticks>

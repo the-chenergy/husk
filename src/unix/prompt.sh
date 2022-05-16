@@ -8,7 +8,9 @@ source "${BASE_DIR}/../../lib/posh-git-sh/git-prompt.sh"
 
 # Set the prompt format to `user@host:short_working_dir [git_status] $ `
 case "${SHELL_NAME}" in
-  ("bash")
-    PROMPT_COMMAND="__posh_git_ps1 '\u@\h:\[\e[1m\]\W\[\e[0m\]' ' \[\e[1m\]\$\[\e[0m\] '";;
-("zsh") __posh_git_ps1 "%n@%m:%B%1d%b" " %B\$%b ";;
+"bash")
+	PROMPT_COMMAND="__posh_git_ps1 "
+	"'\u@\h:\[\e[1m\]\W\[\e[0m\]' ' \[\e[1m\]\$\[\e[0m\] ' "
+	;;
+"zsh") PS1="%n@%m:%B%1d%b\$(__posh_git_echo) %B\$%b " ;;
 esac

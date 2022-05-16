@@ -1,4 +1,4 @@
-# Sets up the current shell.
+# Sets up the current shell for when the shell launches.
 #
 # Husk
 # Qianlang Chen
@@ -13,8 +13,8 @@ SHELL_NAME=$(
 )
 BASE_DIR=$(
   case "${SHELL_NAME}" in
-    ("bash") echo "$(dirname ${BASH_SOURCE})";;
-    ("zsh") echo "$(dirname $0)";;
+  "bash") echo "$(dirname ${BASH_SOURCE})" ;;
+  "zsh") echo "$(dirname $0)" ;;
   esac
 )
 

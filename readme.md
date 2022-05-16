@@ -14,7 +14,13 @@ _Sets up any shell to my taste._
    git submodule update --init --recursive
    ```
 
-1. Append the following line to `~/.bashrc` or `~/.zshrc`:
+1. Execute the one-time initialization commands:
+
+   ```sh
+   source <path-to-husk>/src/unix/init.sh
+   ```
+
+1. Apply the per-launch setup code by appending the following line to `~/.bashrc` or `~/.zshrc`:
 
    ```sh
    source <path-to-husk>/src/unix/setup.sh
