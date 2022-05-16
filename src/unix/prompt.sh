@@ -10,7 +10,7 @@ source "${BASE_DIR}/../../lib/posh-git-sh/git-prompt.sh"
 # - Replaces bright colors with gray
 # - Hides stats with value zero
 function __git_status() {
-	local s=$(echo $(__posh_git_echo) | sed "s@\[0;9[0-9]m@\[0;37m@g" | sed "s@ [+-~]0@@g")
+	local s=$(echo $(__posh_git_echo) | sed "s@\[0;9[0-9]m@\[0;37m@g" | sed "s@ [+~-]0@@g")
 	if test -n "${s}"; then
 		echo " ${s}"
 	fi
