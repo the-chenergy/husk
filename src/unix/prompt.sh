@@ -2,17 +2,14 @@
 #
 # Husk
 # Qianlang Chen
-# 05/14/22
+# 05/15/22
 
-source $(dirname $0)/../../lib/posh-git-sh/git-prompt.sh
+source "${BASE_DIR}/../../lib/posh-git-sh/git-prompt.sh"
 
-# Check the current shell running and set the prompt format to
-# user@host:short_working_dir [git_status] $
-case $(ps -o comm -p $$ | tail -n 1 | sed 's/^.*[^A-Za-z\d]//') in
-'bash')
-	PS1='\u@\h:\w$(__posh_git_echo) \$ '
-	;;
-'zsh')
-	PS1='%n@%m:%B%1d%b$(__posh_git_echo) %B\$%b '
-	;;
+# Set the prompt format to `user@host:short_working_dir [git_status] $ `
+PS1=$(
+case "${SHELL_NAME}" in
+("bash") echo "\u@\h:\[\e[1m\]\w\[\e[0m\]$(__posh_git_echo) \[\e[1m\]\$\[\e[0m\] ";;
+("zsh") echo "%n@%m:%B%1d%b$(__posh_git_echo) %B\$%b ";;
 esac
+)
