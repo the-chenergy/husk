@@ -2,14 +2,27 @@
 #
 # Husk
 # Qianlang Chen
-# 05/15/22
+# 05/16/22
 
 source "${BASE_DIR}/../../lib/posh-git-sh/git-prompt.sh"
 
-# Set the prompt format to `user@host:short_working_dir [git_status] $ `
+# Posh Git echo with custom format that:
+# - Replaces bright colors with gray
+# - Hides stats with value zero
+function __git_status() {
+	local s=$(echo $(__posh_git_echo) | sed "s@\[0;9[0-9]m@\[0;37m@g" | sed "s@ [+-~]0@@g")
+	if test -n "${s}"; then
+		echo " ${s}"
+	fi
+}
+
+# Set the prompt format to `user@host:short_working_dir [git_status] $ `.
 case "${SHELL_NAME}" in
 "bash")
-	PROMPT_COMMAND="__posh_git_ps1 '\u@\h:\[\e[1m\]\W\[\e[0m\]' ' \[\e[1m\]\$\[\e[0m\] ' "
+	function __set_ps1() {
+		PS1="\u@\h:\[\e[1m\]\W\[\e[0m\]$(__git_status) \[\e[1m\]\$\[\e[0m\] "
+	}
+	PROMPT_COMMAND=__set_ps1
 	;;
-"zsh") PS1="%n@%m:%B%1d%b\$(__posh_git_echo) %B\$%b " ;;
+"zsh") PS1="%n@%m:%B%1d%b\$(__git_status) %B\$%b " ;;
 esac

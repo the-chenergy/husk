@@ -2,9 +2,9 @@
 #
 # Husk
 # Qianlang Chen
-# 05/15/22
+# 05/16/22
 
-alias l="ls"
+alias l=ls
 
 function c() {
   cd $@

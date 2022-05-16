@@ -2,7 +2,7 @@
 #
 # Husk
 # Qianlang Chen
-# 05/15/22
+# 05/16/22
 
 SHELL_NAME=$(
   if test -n "${BASH_VERSION}"; then
@@ -13,10 +13,10 @@ SHELL_NAME=$(
 )
 BASE_DIR=$(
   case "${SHELL_NAME}" in
-  "bash") echo "$(dirname ${BASH_SOURCE})" ;;
-  "zsh") echo "$(dirname $0)" ;;
+  "bash") echo $(dirname ${BASH_SOURCE}) ;;
+  "zsh") echo $(dirname $0) ;;
   esac
 )
 
-source ${BASE_DIR}/prompt.sh
-source ${BASE_DIR}/aliases.sh
+source "${BASE_DIR}/prompt.sh"
+source "${BASE_DIR}/aliases.sh"
