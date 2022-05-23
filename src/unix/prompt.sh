@@ -24,5 +24,5 @@ case "${SHELL_NAME}" in
 	}
 	PROMPT_COMMAND=__set_ps1
 	;;
-"zsh") PS1="%n@%m:%B%1d%b\$(__git_status) %B\$%b " ;;
+"zsh") PS1="%n@%m:%B%1~%b\$(__git_status) %B\$%b " ;;
 esac
