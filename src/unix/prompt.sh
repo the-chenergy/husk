@@ -16,7 +16,7 @@ function __git_status() {
 	fi
 }
 
-# Set the prompt format to `user@host:short_working_dir [git_status] $ `.
+# Set the prompt format to `short_working_dir [git_status] $ `.
 case "${SHELL_NAME}" in
 "bash")
 	function __set_ps1() {
